@@ -322,7 +322,7 @@
                            "/root/setuphadoop.sh ", {"Ref" : "HadoopVersion"} ," > /var/log/setuphadoop.log 2>&1\n",
                            "/root/setupaccumulo.sh ", {"Ref" : "AccumuloVersion"} ," > /var/log/setupaccumulo.log 2>&1\n",
                            "/root/ipAndKeys.sh namenode cometbucket 'namenode resourcemanager worker1 worker2 accumulomaster' true > /var/log/ipAndKeys.log 2>&1\n",
-                           "/root/configure.sh accumulomaster false false false true false false false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' > /var/log/configure.log 2>&1"
+                           "/root/configure.sh accumulomaster false false false true false false false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' cometbucket > /var/log/configure.log 2>&1"
                  ]]},
                  "mode"  : "000700",
                  "owner" : "root",
@@ -428,7 +428,7 @@
                            "/root/setuphadoop.sh ", {"Ref" : "HadoopVersion"} ," > /var/log/setuphadoop.log 2>&1\n",
                            "/root/setupaccumulo.sh ", {"Ref" : "AccumuloVersion"} ," > /var/log/setupaccumulo.log 2>&1\n",
                            "/root/ipAndKeys.sh resourcemanager cometbucket 'namenode resourcemanager worker1 worker2 accumulomaster' false > /var/log/ipAndKeys.log 2>&1\n",
-                           "/root/configure.sh accumulomaster false false false false false false true 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' > /var/log/configure.log 2>&1"			   
+                           "/root/configure.sh accumulomaster false false false false false false true 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' cometbucket > /var/log/configure.log 2>&1"			   
                  ]]},
                  "mode"  : "000700",
                  "owner" : "root",
@@ -534,7 +534,7 @@
                            "/root/setuphadoop.sh ", {"Ref" : "HadoopVersion"} ," > /var/log/setuphadoop.log 2>&1\n",
                            "/root/setupaccumulo.sh ", {"Ref" : "AccumuloVersion"} ," > /var/log/setupaccumulo.log 2>&1\n",
                            "/root/ipAndKeys.sh worker1 cometbucket 'namenode resourcemanager worker1 worker2 accumulomaster' false > /var/log/ipAndKeys.log 2>&1\n",
-                           "/root/configure.sh accumulomaster false true false false false true false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' > /var/log/configure.log 2>&1"			   
+                           "/root/configure.sh accumulomaster false true false false false true false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' cometbucket > /var/log/configure.log 2>&1"			   
                  ]]},
                  "mode"  : "000700",
                  "owner" : "root",
@@ -640,7 +640,7 @@
                            "/root/setuphadoop.sh ", {"Ref" : "HadoopVersion"} ," > /var/log/setuphadoop.log 2>&1\n",
                            "/root/setupaccumulo.sh ", {"Ref" : "AccumuloVersion"} ," > /var/log/setupaccumulo.log 2>&1\n",
                            "/root/ipAndKeys.sh worker2 cometbucket 'namenode resourcemanager worker1 worker2 accumulomaster' false > /var/log/ipAndKeys.log 2>&1\n",
-                           "/root/configure.sh accumulomaster false true false false false true false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' > /var/log/configure.log 2>&1"			   
+                           "/root/configure.sh accumulomaster false true false false false true false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' cometbucket > /var/log/configure.log 2>&1"			   
                  ]]},
                  "mode"  : "000700",
                  "owner" : "root",
@@ -742,11 +742,12 @@
                            "git clone https://github.com/kthare10/accumulo.git /root/accumulo\n",
                            "mv /root/accumulo/config/* /root/\n",
                            "rm -rf /root/accumulo\n",
+                           "/root/setupmaven.sh ",{"Ref" : "MavenVersion"}," > /var/log/setupmaven.log 2>&1\n",
                            "/root/setupzookeeper.sh ",{"Ref" : "ZooKeeperVersion"}," > /var/log/setupzookeeper.log 2>&1\n",
                            "/root/setuphadoop.sh ", {"Ref" : "HadoopVersion"} ," > /var/log/setuphadoop.log 2>&1\n",
                            "/root/setupaccumulo.sh ", {"Ref" : "AccumuloVersion"} ," > /var/log/setupaccumulo.log 2>&1\n",
                            "/root/ipAndKeys.sh accumulomaster cometbucket 'namenode resourcemanager worker1 worker2 accumulomaster' false > /var/log/ipAndKeys.log 2>&1\n",
-                           "/root/configure.sh accumulomaster true false false false false false false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' > /var/log/configure.log 2>&1"			   
+                           "/root/configure.sh accumulomaster true false false false false false false 'worker1 worker2' 'namenode resourcemanager worker1 worker2 accumulomaster' cometbucket > /var/log/configure.log 2>&1"			   
                  ]]},
                  "mode"  : "000700",
                  "owner" : "root",
@@ -764,6 +765,7 @@
              "packages" : {
                "yum" : {
                    "java-1.8.0-openjdk"  : [],
+                   "java-1.8.0-openjdk-devel"  : [],
                    "git"  : []
                }
              },
