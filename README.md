@@ -9,6 +9,9 @@ Apache Accumulo is a key/value store based on the design of Google's BigTable. A
 
 See official documentation for more information.
 
+## Accumulo Cluster
+![Cluster](../master/images/cluster.png)
+
 ## How to use this cloudformation?
 ### Pre-requisites
 1. User must have AWS account with privilges to create/delete IAMRole, IAMPolicy and IAMProfile
