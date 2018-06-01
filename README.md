@@ -16,7 +16,7 @@ See official documentation for more information.
 ### Pre-requisites
 1. User must have AWS account with privilges to create/delete IAMRole, IAMPolicy and IAMProfile
 2. Key pair has been created
-3. Change the value of ACCUMULO_PASSWORD in ![setupaccumulo.sh](.../master/config/setupaccumulo.sh). Default value is 'secret'
+3. Change the value of ACCUMULO_PASSWORD in [setupaccumulo.sh](.../master/config/setupaccumulo.sh). Default value is 'secret'
 ### Create a Accumulo Stack
 Create a stack on AWS Cloudformation service by using accumuloCloudFormation.json. 
 #### Logon to AWS Console and Search for Cloudformation service
@@ -67,10 +67,10 @@ This script should be executed on accumulomaster console as root user.
 
 ## Accumulo stack hacks
 ### Launch Accumulo with one worker
-1. Edit ![accumuloCloudFormation.json](.../master/accumuloCloudFormation.json] and remove the section for worker2 line 600-705
-2. Replace worker2 with empty string in ![accumuloCloudFormation.json](.../master/accumuloCloudFormation.json]
+1. Edit [accumuloCloudFormation.json](.../master/accumuloCloudFormation.json] and remove the section for worker2 line 600-705
+2. Replace worker2 with empty string in [accumuloCloudFormation.json](.../master/accumuloCloudFormation.json]
 ### Launch Multiple Accumulo stacks
-1. Make copy of ![accumuloCloudFormation.json](.../master/accumuloCloudFormation.json]
-2. Replace bucket name i.e. cometbucket in ![accumuloCloudFormation.json](.../master/accumuloCloudFormation.json] to a different name in one of the files
+1. Make copy of [accumuloCloudFormation.json](.../master/accumuloCloudFormation.json]
+2. Replace bucket name i.e. cometbucket in [accumuloCloudFormation.json](.../master/accumuloCloudFormation.json] to a different name in one of the files
 
 
